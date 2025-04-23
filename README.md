@@ -50,3 +50,32 @@ A one-file Python script that turns any meeting audio (or video) into polished s
 
 ### Dependencies
 pip install openai whisper ffmpeg-python pydub
+
+## Installation
+
+```bash
+pip install minutesai
+```
+
+*(This will pull in `openai`, `whisper`, `ffmpeg-python`, `pydub`, etc.)*
+
+## Quickstart
+
+```bash
+minutesai \
+  --input meeting.mp4 \
+  --output summary.md
+```
+
+## Example
+
+```python
+from minutesai import MinutesAI
+
+ai = MinutesAI(api_key="YOUR_OPENAI_KEY")
+summary = ai.summarize("meeting.mp4")
+print(summary)
+```
+
+—Required ENV: `OPENAI_API_KEY` and you’re golden.
+
